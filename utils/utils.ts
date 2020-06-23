@@ -5,6 +5,7 @@ export async function fetcher(url: any) {
       'Authorization': process.env.NEXT_PUBLIC_GITHUB_TOKEN
     }
   })
+  const data = await response.json()
 
-  return await response.json()
+  return data
 }

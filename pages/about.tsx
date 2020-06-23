@@ -6,7 +6,15 @@ export default function About() {
       <div>
         <p>This is a pet project that I created to learn and improve my skills.</p>
         <br/>
-        <p>If you are interested in knowing more about this project please visit the <a href="https://github.com/gomespereira/gh-profile-standard" target="_blank" rel="noopener noreferrer">GitHub repository.</a></p>
+        <p>If you are interested in knowing more about this project please visit the&nbsp;
+          <a
+            href="https://github.com/gomespereira/gh-profile-standard"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub repository.
+          </a>
+        </p>
       </div>
     </Layout>
   )

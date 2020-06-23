@@ -18,18 +18,27 @@ export default function Repos() {
         {data.map((repo: any) => (
           <div key={repo.id}>
             <div>
-              <a href={repo.html_url} target="_blank" rel="noopener noreferrer"></a>
+              <a
+                href={repo.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              </a>
             </div>
-
             <div>
               <div>{repo.name}</div>
             </div>
-
-            {repo.description === null ? <span>None</span> : <span>{repo.description}</span>}
-
+            {
+              repo.description === null
+                ? <span>None</span>
+                : <span>{repo.description}</span>
+            }
             <div>
-              {repo.language === null ? <span>None</span> : <span>{repo.language}</span> }
-
+              {
+                repo.language === null
+                  ? <span>None</span>
+                  : <span>{repo.language}</span>
+              }
               <div>
                 <div>
                   <span>{repo.stargazers_count}</span>
