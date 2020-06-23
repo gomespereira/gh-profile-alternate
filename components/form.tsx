@@ -5,11 +5,11 @@ export default function Form() {
   const [username, setUsername] = useState('')
   const router = useRouter()
 
-  function handleChange(event) {
+  function handleChange(event: any) {
     setUsername(event.target.value)
   }
 
-  function handleSubmit(event) {
+  function handleSubmit(event: any) {
     event.preventDefault()
     router.push({
       pathname: '/profile',

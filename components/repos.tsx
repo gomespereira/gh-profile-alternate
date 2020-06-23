@@ -15,7 +15,7 @@ export default function Repos() {
       <div>Repositories</div>
 
       <div>
-        {data.map((repo) => (
+        {data.map((repo: any) => (
           <div key={repo.id}>
             <div>
               <a href={repo.html_url} target="_blank" rel="noopener noreferrer"></a>

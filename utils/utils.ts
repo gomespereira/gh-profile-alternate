@@ -1,4 +1,4 @@
-export async function fetcher(url) {
+export async function fetcher(url: any) {
   const response = await fetch(url, {
     headers: {
       'Accept': 'application/vnd.github.v3+json',
