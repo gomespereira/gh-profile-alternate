@@ -22,6 +22,7 @@ export default function Form() {
       <label htmlFor="username">github.com/</label>
       <input
         id="username"
+        className="ml-1 pl-2 rounded outline-none focus:shadow-outline"
         type="text"
         placeholder={'Press "/" to focus'}
         onChange={handleChange}

@@ -4,6 +4,9 @@ module.exports = {
     './pages/**/*.tsx'
   ],
   theme: {
+    fontFamily: {
+      'mono': ['"DM Mono"']
+    },
     extend: {},
   },
   variants: {},

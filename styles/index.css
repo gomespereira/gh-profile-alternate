@@ -2,4 +2,8 @@
 
 @tailwind components;
 
+#__next {
+  @apply flex flex-col min-h-screen bg-red-200 font-mono;
+}
+
 @tailwind utilities;

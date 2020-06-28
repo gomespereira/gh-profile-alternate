@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import useSWR from 'swr'
 
-import { fetcher } from '../utils/utils'
+import { fetcher, formatter } from '../utils/utils'
 
 export default function Info() {
   const router = useRouter()
@@ -10,18 +10,21 @@ export default function Info() {
 
   if(!data) return <div>Loading...</div>
 
+  const formattedDate = formatter(data.created_at)
+
   return (
-    <section>
-      <div>Profile</div>
+    <section className="flex flex-col items-center space-y-4">
       <picture>
         <img
+          className="w-32 rounded-full"
           src={data.avatar_url}
           alt="Avatar"
         />
       </picture>
-      <div>
-        <span>{data.name}</span>
+      <div className="flex flex-col items-center">
+        <span className="font-bold">{data.name}</span>
         <a
+          className="text-teal-700 hover:underline"
           href={data.html_url}
           target="_blank"
           rel="noopener noreferrer"
@@ -29,13 +32,13 @@ export default function Info() {
           @{data.login}
         </a>
       </div>
-      <div>
+      <div className="flex flex-col items-center">
         <span>{data.location}</span>
-        <span>{data.created_at}</span>
+        <span>Joined in {formattedDate}</span>
       </div>
-      <div>
-        <div>
-          <span>{data.public_repos}</span>
+      <div className="flex space-x-5">
+        <div className="flex flex-col items-center">
+          <span className="font-bold">{data.public_repos}</span>
           <span>
             {
               data.public_repos === 1
@@ -44,8 +47,8 @@ export default function Info() {
             }
           </span>
         </div>
-        <div>
-          <span>{data.followers}</span>
+        <div className="flex flex-col items-center">
+          <span className="font-bold">{data.followers}</span>
           <span>
             {
               data.followers === 1
@@ -54,8 +57,8 @@ export default function Info() {
             }
           </span>
         </div>
-        <div>
-          <span>{data.following}</span>
+        <div className="flex flex-col items-center">
+          <span className="font-bold">{data.following}</span>
           <span>Following</span>
         </div>
       </div>
