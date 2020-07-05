@@ -13,13 +13,9 @@ export default function Layout({ children }) {
           rel="icon"
           href="/favicon.ico"
         />
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       <Header />
-      <main className="flex flex-col flex-auto justify-center items-center m-4">{children}</main>
+      <main className="flex flex-col flex-auto justify-center items-center mt-4 mr-4 mb-10 ml-4 md:mr-10 md:ml-10 space-y-10">{children}</main>
       <Footer />
     </Fragment>
   )

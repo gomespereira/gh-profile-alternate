@@ -2,8 +2,18 @@
 
 @tailwind components;
 
+@font-face {
+  font-family: 'DM Mono';
+  font-display: swap;
+  src: url('/fonts/dm-mono.woff2') format('woff2'),
+       url('/fonts/dm-mono.woff') format('woff'),
+       url('/fonts/dm-mono.ttf') format('truetype');
+}
+
 #__next {
-  @apply flex flex-col min-h-screen bg-red-200 font-mono;
+  font-family: 'DM Mono', monospace;
+  min-height: -webkit-fill-available;
+  @apply flex flex-col bg-red-300;
 }
 
 @tailwind utilities;

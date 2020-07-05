@@ -1,14 +1,12 @@
 module.exports = {
-  purge: [
-    './components/**/*.tsx',
-    './pages/**/*.tsx'
-  ],
-  theme: {
-    fontFamily: {
-      'mono': ['"DM Mono"']
-    },
-    extend: {},
+  purge: {
+    enabled: true,
+    content: [
+      './components/**/*.tsx',
+      './pages/**/*.tsx'
+    ]
   },
+  theme: {},
   variants: {},
   plugins: [],
 }
