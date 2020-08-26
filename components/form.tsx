@@ -1,15 +1,25 @@
-import { useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 export default function Form() {
+  const inputElement = useRef(null)
   const [username, setUsername] = useState('')
   const router = useRouter()
 
-  function handleChange(event: any) {
+  useEffect(() => {
+    document.onkeyup = handleKeyUp
+  },[])
+
+  function handleKeyUp(event:any): void {
+    if (event.keyCode === 191) inputElement.current.focus()
+    if (event.keyCode === 27) inputElement.current.blur()
+  }
+
+  function handleChange(event: any): void {
     setUsername(event.target.value)
   }
 
-  function handleSubmit(event: any) {
+  function handleSubmit(event: any): void {
     event.preventDefault()
     router.push({
       pathname: '/profile',
@@ -25,6 +35,7 @@ export default function Form() {
         className="ml-1 pl-2 rounded outline-none focus:shadow-outline"
         type="text"
         placeholder={'Press "/" to focus'}
+        ref={inputElement}
         onChange={handleChange}
       />
     </form>

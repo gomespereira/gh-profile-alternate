@@ -5,4 +5,4 @@ This project is based on [GitHub Profile Standard](https://github.com/gomesperei
 # Modules
 
 - [`create-next-app`](https://nextjs.org/docs/getting-started)
-- [`swr`](https://swr.now.sh/)
+- [`swr`](https://swr.vercel.app/)

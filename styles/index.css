@@ -12,8 +12,7 @@
 
 #__next {
   font-family: 'DM Mono', monospace;
-  min-height: -webkit-fill-available;
-  @apply flex flex-col bg-red-300;
+  @apply flex flex-col min-h-screen bg-red-300;
 }
 
 @tailwind utilities;

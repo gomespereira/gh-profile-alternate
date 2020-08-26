@@ -1,16 +1,17 @@
 import { useRouter } from 'next/router'
 import useSWR from 'swr'
 
-import { fetcher, formatter } from '../utils/utils'
+import { fetcher, formatDate, formatNumber } from '../utils/utils'
 
 export default function Info() {
   const router = useRouter()
   const { user } = router.query
   const { data } = useSWR(`https://api.github.com/users/${user}`, fetcher)
-
+  
   if(!data) return <div>Loading user information...</div>
-
-  const formattedDate = formatter(data.created_at)
+  
+  const formattedDate = formatDate(data.created_at)
+  const formattedNumber = formatNumber(data.followers)
 
   return (
     <section className="flex flex-col items-center space-y-4">
@@ -75,12 +76,12 @@ export default function Info() {
             <a
               className="font-bold hover:text-blue-900"
               href={`https://github.com/${data.login}?tab=followers`}
-              target="__blank"
+              target="_blank"
               rel="noopener noreferrer"
             >
               {
                 data.followers >= 1000
-                  ? `${(data.followers / 1000).toFixed(1)}k`
+                  ? formattedNumber
                   : data.followers
               }
             </a>
@@ -88,7 +89,7 @@ export default function Info() {
             <a
               className="font-bold hover:text-blue-900"
               href={`https://github.com/${data.login}?tab=following`}
-              target="__blank"
+              target="_blank"
               rel="noopener noreferrer"
             >
               {data.following}
